@@ -9,7 +9,6 @@
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
 	<link rel="icon" href={{url_for('static', filename='favicon-32x32.png' )}} />
 	<link rel="stylesheet" href={{url_for('static', filename='style.css' )}} />
-	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" -->
 	<title>contact</title>
 </head>
 
@@ -19,7 +18,7 @@
 		<div class="wrapper">
 			<nav class="header__nav">
 				<h2 class="visually-hidden">Navigation</h2>
-				<a href="index.html" class="header__home">
+				<a href="/" class="header__home">
 					sauronildas
 					<span class="visually-hidden">(to home page)</span>
 				</a>
@@ -60,13 +59,19 @@
 					possible.
 				</p>
 			</div>
-			<form action="" class="contact__form">
-				<div class="contact__control">
+			<form action="/submit_form" method="post" class="contact__form">
+				{{ form.name.label }}
+				{{form.name}}
+				{{ form.email.label }}
+				{{form.email}}
+				{{ form.message.label }}
+				{{form.message}}
+				<!-- <div class="contact__control">
 					<label for="name" class="visually-hidden">Name</label>
 					<input type="text" id="name" name="name" placeholder="Name" required />
 					<img src="static/assets/images/icon-invalid.svg" alt="" class="contact__invalid-icon" width="24"
 						height="24" />
-				</div>
+				</div> -->
 				<div class="contact__control">
 					<label for="email" class="visually-hidden">Email</label>
 					<input type="email" id="email" name="email" placeholder="Email" required />
@@ -88,7 +93,7 @@
 	</section>
 
 	<div>
-		<h3 class="my-address">Find me here:</h3>
+		<h3 class="my-address">find me here</h3>
 		<div id="map"></div>
 	</div>
 
@@ -122,7 +127,8 @@
 	</footer>
 
 	<script async
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdud5DOlh6gRkUlBZfrHGlW6AjahnTHJ4&callback=initMap"></script>
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdud5DOlh6gRkUlBZfrHGlW6AjahnTHJ4&callback=initMap">
+	</script>
 
 	<script src={{url_for('static', filename='main.js' )}}></script>
 
