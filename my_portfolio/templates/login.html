@@ -1,24 +1,22 @@
-
 {% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
-    %}
-    
-    <form method="POST">
-      <h3 align="center">Login</h3>
-        {{ form.hidden_tag() }}
-
-      <div class="form-group">
-        {{ form.user_name.label }}
-				{{ form.user_name() }}
+%}
+<div class="container-fluid">
+  <form style="padding: 3rem" method="POST">
+    <h3 align="left">Login</h3>
+    {{ form.hidden_tag() }}
+    <div style="text-align: left; margin-top: 5rem">
+      <div style="margin-top: 2rem; display: flex; flex-direction: row">
+        <div style="width: 6rem">{{ form.user_name.label }}</div>
+        {{ form.user_name() }}
       </div>
-      <div class="form-group">
-        {{ form.password.label }}
-				{{ form.password() }}
+      <div style="margin-top: 2rem; display: flex; flex-direction: row ">
+        <div style="width: 6rem">{{ form.password.label }}</div>
+        {{ form.password() }}
       </div>
       <br />
 
-			<div class="from-group">
-					{{ form.submit() }}
-			</div>
-      
-    </form>
-  {% endblock %}
+      <div class="from-group">{{ form.submit() }}</div>
+    </div>
+  </form>
+</div>
+{% endblock %}
