@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
 %}
-<div class="container-fluid">
+<div class="container-fluid" style="background-image: linear-gradient(hsl(153, 71%, 59%), hsl(0, 0%, 85%)); height: 95vh;">
   <form style="padding: 3rem" method="POST">
     <h3 align="left">Login</h3>
     {{ form.hidden_tag() }}
@@ -9,13 +9,13 @@
         <div style="width: 6rem">{{ form.user_name.label }}</div>
         {{ form.user_name() }}
       </div>
-      <div style="margin-top: 2rem; display: flex; flex-direction: row ">
-        <div style="width: 6rem">{{ form.password.label }}</div>
+      <div style="margin-top: 2rem; display: flex; flex-direction: row;">
+        <div style="width: 6rem;">{{ form.password.label }}</div>
         {{ form.password() }}
       </div>
       <br />
 
-      <div class="from-group">{{ form.submit() }}</div>
+      <div class="from-group">{{ form.submit(class="btn btn-dark ml-1 mt-5") }}</div>
     </div>
   </form>
 </div>

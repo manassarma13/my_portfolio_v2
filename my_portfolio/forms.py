@@ -11,4 +11,4 @@ class add_users(FlaskForm):
 class Login(FlaskForm):
     user_name=StringField("NAME:", validators=[DataRequired()])
     password=PasswordField("PASSWORD:", validators=[DataRequired()])
-    submit=SubmitField("Sumbit")
+    submit=SubmitField("Submit")

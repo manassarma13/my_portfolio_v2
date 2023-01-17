@@ -42,46 +42,67 @@ textarea,
 button {
   font-family: 'Space Grotesk', sans-serif;
 }
+/* */
 
-.my_button {
-  background: #D9D9D9;
-  background-image: -webkit-linear-gradient(top, #D9D9D9, #4CE19E);
-  background-image: -moz-linear-gradient(top, #D9D9D9, #4CE19E);
-  background-image: -ms-linear-gradient(top, #D9D9D9, #4CE19E);
-  background-image: -o-linear-gradient(top, #D9D9D9, #4CE19E);
-  background-image: -webkit-gradient(to bottom, #D9D9D9, #4CE19E);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  color: #000000;
-  font-family: Courier New;
-  font-size: 40px;
-  font-weight: 100;
-  padding: 40px;
-  -webkit-box-shadow: 1px 1px 20px 0 #000000;
-  -moz-box-shadow: 1px 1px 20px 0 #000000;
-  box-shadow: 1px 1px 20px 0 #000000;
-  text-shadow: 1px 1px 20px #FFFFFF;
-  border: solid #FFFFFF 1px;
-  text-decoration: none;
-  display: inline-block;
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
   cursor: pointer;
-  text-align: center;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
 }
 
-.my_button:hover {
-  border: solid #337FED 1px;
-  background: #FF6F5C;
-  background-image: -webkit-linear-gradient(top, #FF6F5C, #FFFFFF);
-  background-image: -moz-linear-gradient(top, #FF6F5C, #FFFFFF);
-  background-image: -ms-linear-gradient(top, #FF6F5C, #FFFFFF);
-  background-image: -o-linear-gradient(top, #FF6F5C, #FFFFFF);
-  background-image: -webkit-gradient(to bottom, #FF6F5C, #FFFFFF);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  text-decoration: none;
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+/* 
+
+
+
+stuff
+
+
+
+
+
+
+
+
+*/         
 
 body {
   margin: 0;

@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, url_for, redirect, request
+from flask import Flask, render_template, url_for, redirect, request, flash
 from flask_login import LoginManager, login_user, login_required, \
     logout_user, current_user
 
@@ -41,7 +41,7 @@ def login():
         su=SuperUser.query.filter_by(user_name=form.user_name.data).first()
         if su and su.check_pass(form.password.data):
             login_user(su,remember=False)
-            return render_template('messages.html')
+            return redirect(url_for('messages'))
     return render_template('login.html',form=form)
 
 
@@ -76,8 +76,18 @@ def page(page_name='/'):
 @login_required
 def messages():
     message_data=Users.query.all()
-    print(message_data)
     return render_template('messages.html', messages=message_data)
+
+@app.route('/delete/<id>', methods=['GET', 'POST'])
+@login_required
+def delete(id):
+    message_data=Users.query.get(id)
+    db.session.delete(message_data)
+    db.session.commit()
+    flash("Message Details Deleted Successfully")
+    return redirect(url_for('messages'))
+    
+
 
 @app.route('/logout')
 def logout():

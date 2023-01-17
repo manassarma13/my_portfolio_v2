@@ -9,7 +9,22 @@
         <div class="jumbotron-fluid p-3"> </div>
         <h2> Messages Section </h2>
 
+        {% with messages=get_flashed_messages() %}
+            {% if messages %}
 
+                {% for message in messages %}
+
+                <div class="alert alert-success alert-dismissable role=alert">
+                    <button type="button", class="close" data-dismiss="alert", aria-label="close">
+                        <span aria-hidden="true">x</span>
+                    </button>
+
+                    {{ message }}
+                </div>
+            
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
         <table class="table table-hover table-dark">
             <tr>
                 <th>ID</th>
@@ -26,10 +41,10 @@
                 <td>{{row.name}}</td>
                 <td>{{row.email}}</td>
                 <td>{{row.message}}</td>
-                <td>{{row.date}}</td>
+                <td>{{row.date_added}}</td>
 
                 <td>
-                    <a href="" class="btn btn-danger btn-xs" onclick="return confirm('Do You Want to Delete?')">Delete</a>
+                    <a href="/delete/{{row.id}}" class="btn btn-danger btn-xs" onclick="return confirm('Do You Want to Delete?')">Delete</a>
                 </td>
             </tr>
 
