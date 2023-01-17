@@ -29,8 +29,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" id="home" href="/my_portfolio/templates/index.html">Home</a>
-          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+          <a class="nav-item nav-link" id="home" href="/index.html">Home</a>
+          <a class="nav-item nav-link" id="logout" href="/login">Logout</a>
           <a class="nav-item nav-link" id="login" href="/login">Login</a>
 
         </div>
@@ -38,7 +38,7 @@
     </nav>
 
 
-    <div class="container">{% block content %} {% endblock %}</div>
+    <div class="container">{% block content %} </div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -54,10 +54,6 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-
-    <script
-      type="text/javascript"
-      src="{{ url_for('static', filename='index.js') }}"
-    ></script>
+    {% endblock %}
   </body>
 </html>

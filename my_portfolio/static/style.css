@@ -43,6 +43,46 @@ button {
   font-family: 'Space Grotesk', sans-serif;
 }
 
+.my_button {
+  background: #D9D9D9;
+  background-image: -webkit-linear-gradient(top, #D9D9D9, #4CE19E);
+  background-image: -moz-linear-gradient(top, #D9D9D9, #4CE19E);
+  background-image: -ms-linear-gradient(top, #D9D9D9, #4CE19E);
+  background-image: -o-linear-gradient(top, #D9D9D9, #4CE19E);
+  background-image: -webkit-gradient(to bottom, #D9D9D9, #4CE19E);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  color: #000000;
+  font-family: Courier New;
+  font-size: 40px;
+  font-weight: 100;
+  padding: 40px;
+  -webkit-box-shadow: 1px 1px 20px 0 #000000;
+  -moz-box-shadow: 1px 1px 20px 0 #000000;
+  box-shadow: 1px 1px 20px 0 #000000;
+  text-shadow: 1px 1px 20px #FFFFFF;
+  border: solid #FFFFFF 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.my_button:hover {
+  border: solid #337FED 1px;
+  background: #FF6F5C;
+  background-image: -webkit-linear-gradient(top, #FF6F5C, #FFFFFF);
+  background-image: -moz-linear-gradient(top, #FF6F5C, #FFFFFF);
+  background-image: -ms-linear-gradient(top, #FF6F5C, #FFFFFF);
+  background-image: -o-linear-gradient(top, #FF6F5C, #FFFFFF);
+  background-image: -webkit-gradient(to bottom, #FF6F5C, #FFFFFF);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   background-color: var(--bg-body);
@@ -691,6 +731,8 @@ h1 > span {
   right: 0;
   translate: -50% -50%;
 }
+
+
 
 .contact input:focus-visible:invalid ~ .contact__invalid-icon,
 .contact textarea:focus-visible:invalid ~ .contact__invalid-icon {

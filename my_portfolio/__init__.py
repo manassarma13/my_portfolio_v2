@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask import Blueprint, Flask, render_template, url_for, redirect, request
+from flask import Flask, render_template, url_for, redirect, request
 from flask_login import LoginManager, login_user, login_required, \
     logout_user, current_user
 
@@ -41,7 +41,7 @@ def login():
         su=SuperUser.query.filter_by(user_name=form.user_name.data).first()
         if su and su.check_pass(form.password.data):
             login_user(su,remember=False)
-            return 'fghdjfk'
+            return render_template('messages.html')
     return render_template('login.html',form=form)
 
 
@@ -57,7 +57,6 @@ def page_not_found(e):
 @app.route('/contact.html', methods=['GET', 'POST'])
 def contact():
     form=add_users()
-    print(form.validate_on_submit())
     if form.validate_on_submit():
         users=Users(form.name.data, form.email.data, form.message.data)
         db.session.add(users)
@@ -76,7 +75,9 @@ def page(page_name='/'):
 @app.route('/messages')
 @login_required
 def messages():
-    return render_template('messages.html')
+    message_data=Users.query.all()
+    print(message_data)
+    return render_template('messages.html', messages=message_data)
 
 @app.route('/logout')
 def logout():
