@@ -6,12 +6,17 @@ from flask_login import LoginManager, login_user, login_required, \
 
 db=SQLAlchemy()
 
-from my_portfolio.forms import add_users, Login
+from my_portfolio.forms import add_users, Login, Register
 from my_portfolio.models import Users, SuperUser
 # App
 
 app=Flask(__name__)
-app.config["SECRET_KEY"]='DSFCDSF'
+app.config["SECRET_KEY"]='Y5Gj8iT"NxpU(My8'
+
+# app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://c22107670:UwDXDVR+Ky0T@csmysql.cs.cf.ac.uk:3306/c22107670_flask_cw2"
+
+
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///mydb.db"
 
 
@@ -26,10 +31,10 @@ def load_user(user_id):
 
 with app.app_context():
     db.create_all()
-    temp = SuperUser('s@s.c','qwerty')
+    ################
+    temp = SuperUser('sauronil','darkfire')
     db.session.add(temp)
-    db.session.commit()
-    
+    db.session.commit()    
 @app.route('/')
 def landing_page():
     return render_template('index.html')
@@ -44,6 +49,15 @@ def login():
             return redirect(url_for('messages'))
     return render_template('login.html',form=form)
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    form=Register()
+    if form.validate_on_submit():
+        temp = SuperUser(form.user_name.data,form.password.data)
+        db.session.add(temp)
+        db.session.commit()
+        return redirect(url_for('login'))
+    return render_template('register.html',form=form)
 
 
 @app.errorhandler(404)
@@ -81,8 +95,8 @@ def messages():
 @app.route('/delete/<id>', methods=['GET', 'POST'])
 @login_required
 def delete(id):
-    message_data=Users.query.get(id)
-    db.session.delete(message_data)
+    del_id=Users.query.get(id)
+    db.session.delete(del_id)
     db.session.commit()
     flash("Message Details Deleted Successfully")
     return redirect(url_for('messages'))

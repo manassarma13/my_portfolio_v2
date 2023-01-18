@@ -769,7 +769,6 @@ h1 > span {
 .contact__rings {
   position: absolute;
   left: 0;
-  bottom: 97px;
   translate: -75%;
 }
 #map {
@@ -782,20 +781,6 @@ h1 > span {
   padding-top: 2rem;
   text-align: center;
 }
-/* .transition-1{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 101;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: 0.5s ease-out;
-}
-
-.transition-1.is-active{
-  top: 0;
-} */
 .content-header {
     text-align: center;
     padding-left: 2rem;

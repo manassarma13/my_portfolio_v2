@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/sauronil/Cardiff University/portfolio/my_portfolio_v2_flask/venv/bin/python3" "$0" "$@"
+'''exec' "/home/sauronil/Cardiff University/portfolio/my_portfolio_v2/venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
