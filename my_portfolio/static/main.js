@@ -14,3 +14,24 @@ function initMap() {
 }
 
 window.initMap = initMap;
+
+
+const values = [
+    { value: 'Projects', color: '#f9d77f' },
+    { value: 'Experience', color: '#597bff' },
+    { value: 'Certificates', color: '#f8f8f8' }
+];
+let currentIndex = 0;
+
+function changeText() {
+    const currentElement = values[currentIndex];
+    document.getElementById('changing-text').innerHTML = currentElement.value;
+    document.getElementById('changing-text').style.color = currentElement.color;
+    currentIndex++;
+    if (currentIndex === values.length) {
+        currentIndex = 0;
+    }
+    setTimeout(changeText, 2000);
+}
+
+changeText();
