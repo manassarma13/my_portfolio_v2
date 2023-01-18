@@ -1,22 +1,39 @@
-{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
-%}
-<div class="container-fluid" style="background-image: linear-gradient(hsl(153, 71%, 59%), hsl(0, 0%, 85%)); height: 95vh;">
-  <form style="padding: 3rem" method="POST">
-    <h3 align="left">Login</h3>
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content %}
+<div class="container-fluid"
+  style="background-image: linear-gradient(hsl(153, 71%, 59%), hsl(0, 0%, 85%)); height: 95vh; padding-top: 8rem;">
+  <form class="form-yo" style="padding: 3rem; border-radius: 10px; border: 2px solid #000; background-image:linear-gradient(#f9d77f, #f0deba) " method="POST">
+    <h3 align="center">Login</h3>
     {{ form.hidden_tag() }}
-    <div style="text-align: left; margin-top: 5rem">
-      <div style="margin-top: 2rem; display: flex; flex-direction: row">
-        <div style="width: 6rem">{{ form.user_name.label }}</div>
-        {{ form.user_name() }}
+    <div style="text-align: left; margin-top: 5rem;">
+      <div style="margin-top: 2rem; display: flex; flex-direction: row;">
+        <div style="width: 6rem;">{{ form.user_name.label }}</div>
+        {{ form.user_name(style="background-color: #ecf0f1; border-radius: 10px;") }}
       </div>
       <div style="margin-top: 2rem; display: flex; flex-direction: row;">
         <div style="width: 6rem;">{{ form.password.label }}</div>
-        {{ form.password() }}
+        {{ form.password(style="background-color: #ecf0f1; border-radius: 10px;") }}
       </div>
       <br />
-
-      <div class="from-group">{{ form.submit(class="btn btn-dark ml-1 mt-5") }}</div>
+      <div class="form-group">{{ form.submit(class="btn btn-dark ml-1 mt-5", style="border-radius: 10px;") }}</div>
     </div>
   </form>
 </div>
+
+<style>
+  body {
+    background-image: linear-gradient(to bottom, hsl(153, 71%, 59%), hsl(0, 0%, 85%));
+  }
+  @media screen and (max-width: 430px)  {
+    .form-yo{
+      padding-left: 1rem !important  ;
+      padding-right: 1rem !important  ;
+    }
+  }
+  @media screen and (max-width: 370px)  {
+    .form-yo{
+      padding-left: 0.4rem !important  ;
+      padding-right: 0.2rem !important  ;
+    }
+  }
+</style>
 {% endblock %}
