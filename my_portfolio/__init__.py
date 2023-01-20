@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, url_for, redirect, request, flash
+from flask import Flask, render_template, url_for, redirect, \
+     request, flash, send_from_directory
 from flask_login import LoginManager, login_user, login_required, \
     logout_user, current_user
 
@@ -58,6 +59,13 @@ def register():
         db.session.commit()
         return redirect(url_for('login'))
     return render_template('register.html',form=form)
+
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory("static", "robots.txt")
+
+if __name__ == "__main__":
+    app.run()
 
 
 @app.errorhandler(404)

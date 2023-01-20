@@ -1,3 +1,4 @@
+// Google Map Integration
 function initMap() {
     // The location of Uluru
     const uluru = { lat: 51.486060, lng: -3.173050 };
@@ -15,6 +16,7 @@ function initMap() {
 
 window.initMap = initMap;
 
+//Dynamic Color Js Implementation in Portfolio page
 
 const values = [
     { value: 'Projects', color: '#f9d77f' },

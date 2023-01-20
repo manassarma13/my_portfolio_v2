@@ -224,6 +224,7 @@ svg {
   position: relative;
   z-index: 1;
   margin-block-start: 20px;
+  margin-block-end: 30px;
 }
 
 .header__nav {
@@ -254,6 +255,7 @@ svg {
 @media (min-width: 37.5em) {
   .header {
     margin-block-start: 30px;
+    margin-block-end: 30px;
   }
 
   .header__nav {
@@ -272,7 +274,7 @@ svg {
 @media (min-width: 62.5em) {
   .header {
     margin-block-start: 40px;
-    margin-block-end: 127px;
+    margin-block-end: 50px;
   }
 
   .header__nav {

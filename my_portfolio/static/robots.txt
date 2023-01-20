@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: my_portfolio/templates/404.html
+Disallow: my_portfolio/models.py
+Disallow: my_portfolio/forms.py
+Disallow: my_portfolio/__init__.py
+Disallow: server.py
+Disallow: my_portfolio/templates/500.html
+Disallow: my_portfolio/templates/base.html
+
